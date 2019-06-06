@@ -1,0 +1,22 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using XNode;
+
+[CreateNodeMenu("BlackBoard/Modifier/#SCRIPTNAME#")]
+public class #SCRIPTNAME# : BlackboardModifierNode<float> {
+	
+	[Input] public float _input;
+
+	public override object GetValue(NodePort port)
+	{
+            // Only respond to value requests.
+            if (port.fieldName != "_result") { return null; }
+            // get input values
+            float input = GetInputValue("_input", 0);
+            // Get calculated value.
+            float value = input;
+            // Return the value.
+            return value;
+	}
+}

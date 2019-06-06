@@ -1,0 +1,15 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+
+
+/// <summary>An example task node that debugs a blackboard variable.</summary>
+[CreateNodeMenu("BT/Action/#SCRIPTNAME#")]
+public class #SCRIPTNAME# : BTTaskNode {
+	// Execute task
+	protected override BTGraphResult InternalRun() {
+		// Return success.
+		return BTGraphResult.Success;
+	}
+}

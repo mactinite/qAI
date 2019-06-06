@@ -1,0 +1,23 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using XNode;
+
+[CreateNodeMenu("FSM/State/#SCRIPTNAME#")]
+public class #SCRIPTNAME# : FSMStateNode {
+	
+	// Called when the state is entered
+	public override void Enter() {
+		#NOTRIM#
+	}
+
+	// Called when leaving the state
+	public override void Exit() {
+		#NOTRIM#
+	}
+
+	// Called every frame the state is active
+	public override void Run(){
+		#NOTRIM#
+	}
+}

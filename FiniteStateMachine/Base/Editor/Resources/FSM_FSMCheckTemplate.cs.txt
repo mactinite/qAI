@@ -1,0 +1,22 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using XNode;
+
+[[CreateNodeMenu("FSM/Check/#SCRIPTNAME#")]]
+public class #SCRIPTNAME# : FSMCheckNode {
+
+	// initialization, set up expected variable type for checks here
+	protected override void Init(){
+		// set your expected BlackBoard variable type here
+		_expectedType = typeof(BlackBoardBool);
+		base.Init();
+	}
+
+	// Run your check here
+	protected override bool InternalCheck(){
+		// fetch your BlackBoard variable here
+		Vector3 variable = GetBlackboardValue<bool>("_variable", _variable);
+		return variable;
+	}
+}
