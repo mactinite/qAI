@@ -19,15 +19,19 @@ namespace QAI.BT.Custom {
 	  protected override BTGraphResult InternalRun() {
       // Get value of variable
       object target = GetBlackboardValue<object>("_target", _target, _notSet);
+      if(target == null)
+        target = GetInputPort("_target").GetOutputValue();
       // Make sure target is set.
       if (target == _notSet) {
         return BTGraphResult.Failure;
       }
+      #if UNITY_EDITOR
       // Only debug if the current game object is selected.
       GameObject go = BT.GetValue<GameObject>("GameObject");
       if (Selection.activeGameObject == go) {
         Debug.Log(string.Format("{0}: Result {1}", name, target));
       }
+      #endif
       // Return success.
       return BTGraphResult.Success;
     }
