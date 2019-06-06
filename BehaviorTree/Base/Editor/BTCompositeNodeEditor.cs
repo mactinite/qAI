@@ -46,7 +46,7 @@ namespace QAI.BT {
       // Check if we need to create new exit.
       _newChild = target.GetOutputPort("newChild");
       if (_newChild == null) {
-        _newChild = target.AddInstanceOutput(typeof(BTConnection), Node.ConnectionType.Override, "newChild");
+        _newChild = target.AddInstanceOutput(typeof(BTConnection), Node.ConnectionType.Override, Node.TypeConstraint.None ,"newChild");
       }
 
       // If exit connection is not empty create new exit.
